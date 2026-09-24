@@ -29,7 +29,7 @@ int main()
     auto resultB = calculateB(data);
     auto [valueB, errorB] = *resultB;
 
-    std::cout << "Cubic spline interpolation: " << valueB << '\n';
+    std::cout << "cd buildCubic spline interpolation: " << valueB << '\n';
     std::cout << "Cubic spline error: " << errorB << '\n';
 
 
