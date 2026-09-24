@@ -6,12 +6,21 @@
 std::unique_ptr<Result> calculateA(
     std::shared_ptr<const InputData> data);
 
-std::unique_ptr<Result> calculateB(
-    std::shared_ptr<const InputData> data);
-
 int main()
 {
-    std::cout << "Lab1 Group Project\n";
+    auto data = std::make_shared<const InputData>(
+        InputData{
+            {{1, 2}, {2, 4}, {3, 9}},
+            2.5
+        }
+    );
+
+    auto resultA = calculateA(data);
+
+    auto [valueA, errorA] = *resultA;
+
+    std::cout << "Lagrange interpolation: " << valueA << '\n';
+    std::cout << "Error: " << errorA << '\n';
 
     return 0;
 }
