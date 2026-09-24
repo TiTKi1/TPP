@@ -11,7 +11,18 @@ std::unique_ptr<Result> calculateB(
 
 int main()
 {
-    std::cout << "Lab1 Group Project\n";
+    auto data = std::make_shared<const InputData>(
+        InputData{
+            {{1, 2}, {2, 4}, {3, 9}},
+            2.5
+        }
+    );
+
+    auto resultB = calculateB(data);
+    auto [valueB, errorB] = *resultB;
+
+    std::cout << "Cubic spline interpolation: " << valueB << '\n';
+    std::cout << "Cubic spline error: " << errorB << '\n';
 
     return 0;
 }
